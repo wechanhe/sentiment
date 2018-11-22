@@ -1,2 +1,3 @@
-app1/migrations
-.idea/
+app1/migrations/*
+.idea/*
+venv/*
