@@ -10,8 +10,6 @@
     <script type="text/javascript">
         // 初始化图表标签
         var myChart = echarts.init(document.getElementById('chart'));
-        var aspects = "{{ aspects }}";
-        var aspects_r_p = JSON.parse(aspects_r);
         var options={
             //定义一个标题
             title:{
@@ -22,7 +20,7 @@
             },
             //X轴设置
             xAxis:{
-                data: aspects_r_p
+                data: {{ aspects }}
             },
             yAxis:{
             },
@@ -30,7 +28,7 @@
             series:[{
                 name:'销量',
                 type:'bar',
-                data: ydata
+                data: {{ positive }}
             }]
 
         };
