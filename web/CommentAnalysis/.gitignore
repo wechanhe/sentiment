@@ -1,3 +1,5 @@
 app1/migrations
 .idea
 venv
+*.pyc
+*.py~
