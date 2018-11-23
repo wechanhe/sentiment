@@ -2,6 +2,15 @@
 # -*- coding: UTF-8 -*-
 
 from pyecharts import WordCloud
+import time
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+from pyecharts import Bar
+bar = Bar("我的第一个图表", "这里是副标题")
+bar.add("服装", ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"], [5, 20, 36, 10, 75, 90],is_more_utils=True)
+bar.show_config()
+bar.render()
 
 class Visualizaion:
     def __init__(self):
@@ -18,5 +27,3 @@ class Visualizaion:
                  265]
 
         wc.add("", name, value, word_size_range=[20, 100], shape='circle')
-
-

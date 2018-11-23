@@ -160,7 +160,7 @@ def test():
     comment.append(u"电池发热很厉害")
     comment.append(u"手机打王者荣耀挺爽的")
     comment.append(u"屏幕够大了")
-    comment.append(u"差评差评！！！！")
+    comment.append(u"屏幕手感很好")
     comment.append(u"拍照真的好a")
     comment.append(u"续航很强")
     rating.append(1)
@@ -183,7 +183,7 @@ def test():
     y_test = np.array(rating)
     nsamples, nx, ny = x_test.shape
     x_test = x_test.reshape(nsamples, nx*ny)
-    model = read_model('lr.txt')
+    model = read_model('mlp.txt')
     y_pred = model.predict(x_test)
     print y_test, y_pred
     precison_recall_f1(y_true=y_test, y_pred=y_pred)
@@ -225,8 +225,9 @@ def train():
     # 划分数据集合，比例为8:2，随机数种子设置为10，X代表构建的训练样本，Y是标签
     global X_train, X_test, Y_train, Y_test
     X_train, X_test, Y_train, Y_test = train_test_split(feature, label, test_size=0.2, random_state=10)
-    log_reg()
-    gbdt()
+    # log_reg()
+    # gbdt()
+    mlp_classifier()
 
 if __name__ == '__main__':
     # train()
